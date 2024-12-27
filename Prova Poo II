@@ -1,0 +1,35 @@
+class Item:
+    def __init__(self, nome, responsavel):
+        self.nome = nome
+        self.responsavel = responsavel
+
+    def mostrar_detalhes(self):
+        print(f"Nome: {self.nome}")
+        print(f"Responsável: {self.responsavel}")
+
+class Obra(Item):
+    def __init__(self, nome, responsavel, categoria):
+        super().__init__(nome, responsavel)
+        self.categoria = categoria
+
+    def mostrar_detalhes(self):
+        super().mostrar_detalhes()
+        print(f"Categoria: {self.categoria}")
+
+class Periodico(Item):
+    def __init__(self, nome, responsavel, numero_edicao):
+        super().__init__(nome, responsavel)
+        self.numero_edicao = numero_edicao
+
+    def mostrar_detalhes(self):
+        super().mostrar_detalhes()
+        print(f"Número da Edição: {self.numero_edicao}")
+
+obra = Obra("1984", "George Orwell", "Distopia")
+periodico = Periodico("Ciência Hoje", "SBPC", "Edição 150")
+
+print("Detalhes da Obra:")
+obra.mostrar_detalhes()
+
+print("\nDetalhes do Periódico:")
+periodico.mostrar_detalhes()
